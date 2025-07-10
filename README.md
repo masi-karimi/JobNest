@@ -20,6 +20,7 @@ JobNest is designed as a traditional **Multi-Page Application (MPA)**, where the
 - View & edit user profile
 - Create, edit, and manage job listings (any registered user can post jobs)
 - Track applications to your posted jobs
+- Seeder data to get quickly started
 
 ---
 
