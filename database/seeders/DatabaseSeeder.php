@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Add users data, faked through factories
         \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
@@ -19,11 +20,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        \App\Models\Category::factory(5)->create();
-        \App\Models\JobType::factory(5)->create();
+        // Add job data, staticly defined in the seeders below
+        $this->call([
+            CategoriesTableSeeder::class,
+            JobTypesTableSeeder::class,
+            JobsTableSeeder::class,
+        ]);
 
-        \App\Models\Job::factory(20)->create();
-
-
+       
     }
+
 }
+
